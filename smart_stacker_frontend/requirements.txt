@@ -1,0 +1,11 @@
+# MQTT Communication
+paho-mqtt>=2.0.0
+
+# HTTP Requests for LLM API
+requests>=2.31.0
+
+# Speech Recognition
+SpeechRecognition>=3.10.0
+
+# Audio Processing (for microphone support)
+PyAudio>=0.2.13
