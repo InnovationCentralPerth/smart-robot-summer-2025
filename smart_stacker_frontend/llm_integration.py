@@ -161,10 +161,6 @@ class AnimalStackerLLM:
                     5. Understand spatial concepts: left, right, center, front, back
                     6. Respond with JSON ONLY - no explanations or additional text
                 """
-    
-    def create_system_prompt(self) -> str:
-        """Return the loaded system prompt"""
-        return self.system_prompt
 
     def call_llm(self, user_command: str, current_positions: Dict[str, str]) -> Tuple[Optional[Dict], float, str]:
         """
@@ -180,16 +176,13 @@ class AnimalStackerLLM:
         # Convert current positions to JSON string for better clarity
         positions_json = json.dumps(current_positions)
         context_prompt = f"""
-        
-            Current position of animals is {positions_json}.
-
-            User command: "{user_command}"
-
-            Generate robot command JSON:
-            """
+                            Current position of animals is {positions_json}.\n
+                            User command: "{user_command}"\n
+                            Generate robot command JSON:
+                        """
 
         # Construct the full prompt that will be sent to LLM
-        full_prompt = self.create_system_prompt() + "\n" + context_prompt
+        full_prompt = self.system_prompt() + "\n" + context_prompt
 
         # Log the complete command string sent to the language model
         logging.info(f"Command string sent to LLM:\n{full_prompt}")
