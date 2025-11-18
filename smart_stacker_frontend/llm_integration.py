@@ -31,9 +31,13 @@ from dataclasses import dataclass
 from dotenv import load_dotenv
 import os
 
+# Load dotenv configurations
 load_dotenv()
 
 log_file = os.getenv("LOG_FILE", "default.log")
+llm_model = os.getenv("MODEL", "gemma3:4b")
+llm_host = os.getenv("HOST_URL", "http://localhost:11434")
+llm_base_prompt = os.getenv("PROMPT_FILE", "llm_system_prompt.txt")
 
 # Configure logging for academic analysis
 logging.basicConfig(
@@ -63,10 +67,9 @@ class AnimalStackerLLM:
     natural human language and precise robotic control commands.
     """
     
-    def __init__(self, model_name: str = "gemma3:4b", base_url: str = "http://localhost:11434", 
-    #def __init__(self, model_name: str = "phi3-robot:latest", base_url: str = "http://localhost:11434", 
+    def __init__(self, model_name: str = llm_model, base_url: str = llm_host,
     
-        prompt_file: str = "llm_system_prompt.txt"):
+        prompt_file: str = llm_base_prompt):
         self.model_name = model_name
         self.base_url = base_url
         self.prompt_file = prompt_file
