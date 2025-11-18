@@ -128,38 +128,39 @@ class AnimalStackerLLM:
     
     def get_default_prompt(self) -> str:
         """Fallback default prompt if file loading fails"""
-        return """You are an intelligent user command interpreter to send commands to an animal (toy) stacking robot.
+        return  """
+                    You are an intelligent user command interpreter to send commands to an animal (toy) stacking robot.
 
-IMPORTANT RULES:
-1. Only use these animals: E, L, F
-2. Only use these positions: L1, L2, C, R1, R2
-3. Never output a "new position" that is the same for more than one animal
-   e.g. Do not send a JSON command like  {'E': 'L1', 'L': 'C', 'F': 'L1'} as both E and F are sent to L1 position
-4. Unaffected animals are to remain in same position 
-5. Understand spatial concepts: left, right, center, front, back
-6. Respond with JSON ONLY - no explanations or additional text
+                    IMPORTANT RULES:
+                    1. Only use these animals: E, L, F
+                    2. Only use these positions: L1, L2, C, R1, R2
+                    3. Never output a "new position" that is the same for more than one animal
+                    e.g. Do not send a JSON command like  {'E': 'L1', 'L': 'C', 'F': 'L1'} as both E and F are sent to L1 position
+                    4. Unaffected animals are to remain in same position 
+                    5. Understand spatial concepts: left, right, center, front, back
+                    6. Respond with JSON ONLY - no explanations or additional text
 
-Spatially
+                    Spatially
 
-BACK ROW  - L1  ROBOT  R1
-FRONT ROW - L2    C    R2            		
+                    BACK ROW  - L1  ROBOT  R1
+                    FRONT ROW - L2    C    R2            		
 
-- Animal properties: (E) Elephant=largest size/heaviest, (L) Lion=medium size/fastest, (F) Baby Bear=smallest size/slowest
+                    - Animal properties: (E) Elephant=largest size/heaviest, (L) Lion=medium size/fastest, (F) Baby Bear=smallest size/slowest
 
-TASK: Convert natural language commands into JSON robot instructions.
+                    TASK: Convert natural language commands into JSON robot instructions.
 
-OUTPUT FORMAT: Always respond with ONLY valid JSON in this exact format:
-{"E": "new position", "L": "new position", "F": "new position"}
-.. where "new position" is one of from Available positions above
+                    OUTPUT FORMAT: Always respond with ONLY valid JSON in this exact format:
+                    {"E": "new position", "L": "new position", "F": "new position"}
+                    .. where "new position" is one of from Available positions above
 
-IMPORTANT RULES:
-1. Only use these animals: E, L, F
-2. Only use these positions: L1, L2, C, R1, R2
-3. Animals must never be commanded to move to occupy the same position
-   e.g. DO NOT SEND COMMAND  {'E': 'L1', 'L': 'C', 'F': 'L1'} as both E and F are sent to L1 position4. Unaffected animals are to remain in same position 
-5. Understand spatial concepts: left, right, center, front, back
-6. Respond with JSON ONLY - no explanations or additional text
-"""
+                    IMPORTANT RULES:
+                    1. Only use these animals: E, L, F
+                    2. Only use these positions: L1, L2, C, R1, R2
+                    3. Animals must never be commanded to move to occupy the same position
+                    e.g. DO NOT SEND COMMAND  {'E': 'L1', 'L': 'C', 'F': 'L1'} as both E and F are sent to L1 position4. Unaffected animals are to remain in same position 
+                    5. Understand spatial concepts: left, right, center, front, back
+                    6. Respond with JSON ONLY - no explanations or additional text
+                """
     
     def create_system_prompt(self) -> str:
         """Return the loaded system prompt"""
@@ -178,11 +179,14 @@ IMPORTANT RULES:
         # Construct context-aware prompt with current robot state
         # Convert current positions to JSON string for better clarity
         positions_json = json.dumps(current_positions)
-        context_prompt = f"""Current position of animals is {positions_json}.
+        context_prompt = f"""
+        
+            Current position of animals is {positions_json}.
 
-User command: "{user_command}"
+            User command: "{user_command}"
 
-Generate robot command JSON:"""
+            Generate robot command JSON:
+            """
 
         # Construct the full prompt that will be sent to LLM
         full_prompt = self.create_system_prompt() + "\n" + context_prompt
