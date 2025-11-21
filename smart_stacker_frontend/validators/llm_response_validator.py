@@ -1,22 +1,31 @@
-from dotenv import load_dotenv
+"""Validation helpers for LLM responses."""
+from __future__ import annotations
+
+from typing import Dict, Iterable, Set
 import os
 
-load_dotenv()
+from smart_stacker.config import DEFAULT_ANIMALS, DEFAULT_POSITIONS
 
-def load_list_env(key: str) -> set:
-    """Load comma-separated environment variable as a set."""
+
+def load_list_env(key: str, fallback: Iterable[str]) -> Set[str]:
+    """Load comma-separated environment variable with fallback values."""
+
     raw = os.getenv(key)
     if not raw:
-        raise ValueError(f"Missing environment variable: {key}")
+        return {item.strip() for item in fallback}
     return {item.strip() for item in raw.split(",") if item.strip()}
 
-class LLMResponseValidator:
-    def __init__(self):
-        self.animal_list = load_list_env("VALID_ANIMALS")
-        self.position_list = load_list_env("VALID_POSITIONS")
 
-    def validate_format(self, data: dict) -> None:
-        """Validate JSON structure and required keys."""
+class LLMResponseValidator:
+    """Validate LLM JSON responses before execution."""
+
+    def __init__(self) -> None:
+        self.animal_list = _load_list_env("VALID_ANIMALS", DEFAULT_ANIMALS)
+        self.position_list = _load_list_env("VALID_POSITIONS", DEFAULT_POSITIONS)
+
+    def validate_format(self, data: Dict[str, str]) -> None:
+        """Validate dictionary shape and contents."""
+
         if not isinstance(data, dict):
             raise ValueError("Response must be a dictionary.")
 
@@ -34,14 +43,24 @@ class LLMResponseValidator:
             if position not in self.position_list:
                 raise ValueError(f"Invalid position '{position}' for {animal}.")
 
-    def validate_no_duplicates(self, data: dict) -> None:
-        """Ensure positions are not duplicated across animals."""
-        positions = list(data.values())
-        duplicates = {position for position in positions if positions.count(position) > 1}
+    def validate_no_duplicates(self, data: Dict[str, str]) -> None:
+        """Ensure animals are not assigned to the same position."""
+
+        seen: Set[str] = set()
+        duplicates: Set[str] = set()
+        for position in data.values():
+            if position in seen:
+                duplicates.add(position)
+            seen.add(position)
+
         if duplicates:
             raise ValueError(f"Duplicate positions found: {duplicates}")
 
-    def validate(self, data: dict) -> None:
-        """Run all validation checks."""
+    def validate(self, data: Dict[str, str]) -> None:
+        """Run all validation steps."""
+
         self.validate_format(data)
         self.validate_no_duplicates(data)
+
+
+__all__ = ["LLMResponseValidator"]

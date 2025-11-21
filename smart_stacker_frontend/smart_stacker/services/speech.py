@@ -53,43 +53,62 @@ class SpeechInterface:
             return None
         return self._recognize(audio)
 
-    def continuous_listen(self, handler: Callable[[str], None]) -> None:
+def continuous_listen(self, handler: Callable[[str], None]) -> None:
         """Continuously listen for wake word and forward commands."""
-
-        TODO: Need to fix this function.
 
         if not self.microphone_available:
             return
 
+        # 1. Initial adjustment for ambient noise (only needs to be done once)
         with suppress_audio_errors():
             with sr.Microphone() as source:
                 self.recognizer.adjust_for_ambient_noise(source)
 
         listening = True
-
+        
+        # 2. Use the `listening` flag as a clear loop termination condition
         while listening:
-            with suppress_audio_errors():
-                try:
+            try:
+                # --- Step 1: Listen for the wake word ---
+                with suppress_audio_errors():
+                    # Set a short timeout/phrase_time_limit for the wake word listen phase
                     with sr.Microphone() as source:
                         audio = self.recognizer.listen(source, timeout=1, phrase_time_limit=2)
-                    transcript = self._recognize(audio).lower()
-                    if not transcript:
-                        continue
-                    if self.config.wake_word in transcript:
+                
+                # Check for successful transcription
+                transcript = self.recognize(audio).lower()
+                
+                # Use standard conditional logic instead of `if not transcript: continue`
+                if transcript and self.config.wake_word in transcript:
+                    
+                    # --- Step 2: Listen for the command after wake word is detected ---
+                    with suppress_audio_errors():
+                        # Use a longer timeout/phrase_time_limit for the command phase
                         with sr.Microphone() as source:
                             command_audio = self.recognizer.listen(source, timeout=5, phrase_time_limit=5)
-                        command_text = self._recognize(command_audio)
-                        if not command_text:
-                            continue
+                    
+                    command_text = self.recognize(command_audio)
+                    
+                    # Check for successful command transcription
+                    if command_text:
+                        # Use standard conditional logic instead of `if stop_phrase: break`
                         if self.config.listen_stop_phrase in command_text.lower():
-                            break
-                        handler(command_text)
-                except sr.WaitTimeoutError:
-                    continue
-                except KeyboardInterrupt:
-                    break
+                            listening = False  # Set flag to terminate the while loop
+                        else:
+                            handler(command_text)
+                            
+            # 3. Handle expected exceptions by letting the loop naturally continue
+            except sr.WaitTimeoutError:
+                # This is normal if nothing is said during the wake word phase.
+                # The loop will re-execute naturally.
+                pass
+            except KeyboardInterrupt:
+                listening = False  # Set flag to terminate the while loop
+            except Exception:
+                # Handle other unexpected errors and allow the loop to continue
+                pass
 
-    def _test_microphone(self) -> bool:
+    def test_microphone(self) -> bool:
         """Return True if a microphone can be initialized."""
 
         with suppress_audio_errors():
@@ -103,7 +122,7 @@ class SpeechInterface:
             except Exception:
                 return False
 
-    def _recognize(self, audio: sr.AudioData) -> Optional[str]:
+    def recognize(self, audio: sr.AudioData) -> Optional[str]:
         """Run speech recognition and handle errors uniformly."""
 
         try:

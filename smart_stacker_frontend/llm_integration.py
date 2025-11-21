@@ -30,6 +30,7 @@ from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
 from dotenv import load_dotenv
 import os
+from validators.llm_validator import LLMResponseValidator
 
 # Load dotenv configurations
 load_dotenv()
@@ -74,6 +75,9 @@ class AnimalStackerLLM:
         self.base_url = base_url
         self.prompt_file = prompt_file
         self.metrics_log: List[CommandMetrics] = []
+
+        # LLM response validator
+        self.llm_response_validator = LLMResponseValidator()
         
         # Load system prompt from file
         self.system_prompt = self.load_system_prompt()
@@ -301,22 +305,28 @@ class AnimalStackerLLM:
             confidence_score=0.0
         )
         
-        if parsed_json and self.validate_command_json(parsed_json):
-            # Success case: Valid robot command generated
-            complete_command = self.complete_command(parsed_json, current_positions)
-            metrics.success = True
-            metrics.confidence_score = self.calculate_confidence(parsed_json, user_input)
-            metrics.json_output = complete_command
-            
-            logging.info(f"Successfully generated command: {complete_command}")
-            self.metrics_log.append(metrics)
-            return complete_command
+        if parsed_json:
+            try:
+                # Second layer: strict validation (format, missing keys, duplicates)
+                self.llm_response_validator.validate_llm_response(parsed_json)
+
+                # Your original validation (optional but harmless)
+                if self.validate_command_json(parsed_json):
+                    complete_command = self.complete_command(parsed_json, current_positions)
+                    metrics.success = True
+                    metrics.confidence_score = self.calculate_confidence(parsed_json, user_input)
+                    metrics.json_output = complete_command
+
+                    self.metrics_log.append(metrics)
+                    return complete_command
+
+            except Exception as e:
+                logging.warning(f"LLM output rejected by validator: {e}")
             
         else:
-            # Failure case: Use academic fallback strategy
             metrics.error_type = "LLM_PARSING_FAILED"
             logging.warning(f"LLM failed to generate valid command. Using fallback.")
-            
+
             fallback_command = self.academic_fallback(user_input, current_positions)
             metrics.json_output = fallback_command
             self.metrics_log.append(metrics)
