@@ -108,7 +108,7 @@ class AnimalStackerLLM:
             f"User command: \"{user_command}\"\n"
             "Generate robot command JSON:"
         )
-        full_prompt = f"{self._system_prompt}\n{context_prompt}"
+        full_prompt = f"{self.system_prompt}\n{context_prompt}"
 
         try:
             response = requests.post(

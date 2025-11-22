@@ -36,7 +36,7 @@ class SpeechInterface:
                 audio = self.recognizer.record(source)
         except Exception:
             return None
-        return self._recognize(audio)
+        return self.recognize(audio)
 
     def record_microphone(self, duration: int = 8) -> Optional[str]:
         """Record audio for a fixed duration and transcribe it."""
@@ -51,7 +51,7 @@ class SpeechInterface:
                     audio = self.recognizer.record(source, duration=duration)
         except Exception:
             return None
-        return self._recognize(audio)
+        return self.recognize(audio)
 
     def continuous_listen(self, handler: Callable[[str], None]) -> None:
             """Continuously listen for wake word and forward commands."""
