@@ -4,12 +4,12 @@ from __future__ import annotations
 import json
 from typing import Dict, Optional
 
-from smart_stacker.config import MQTTConfig, SpeechConfig
-from smart_stacker.models.command import CommandResult
-from smart_stacker.services.llm_client import AnimalStackerLLM
-from smart_stacker.services.mqtt_client import MQTTEventClient
-from smart_stacker.services.speech import SpeechInterface
-from smart_stacker.validators.response import LLMResponseValidator
+from ..config import MQTTConfig, SpeechConfig
+from ..models.command import CommandResult
+from ..services.llm_client import AnimalStackerLLM
+from ..services.mqtt_client import MQTTEventClient
+from ..services.speech import SpeechInterface
+from ..validators.llm_response_validator import LLMResponseValidator
 
 
 class HybridVoiceController:

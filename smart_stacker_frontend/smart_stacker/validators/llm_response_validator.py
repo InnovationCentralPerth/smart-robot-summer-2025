@@ -4,7 +4,7 @@ from __future__ import annotations
 from typing import Dict, Iterable, Set
 import os
 
-from smart_stacker.config import DEFAULT_ANIMALS, DEFAULT_POSITIONS
+from ..config import DEFAULT_ANIMALS, DEFAULT_POSITIONS
 
 
 def load_list_env(key: str, fallback: Iterable[str]) -> Set[str]:
@@ -20,8 +20,8 @@ class LLMResponseValidator:
     """Validate LLM JSON responses before execution."""
 
     def __init__(self) -> None:
-        self.animal_list = _load_list_env("VALID_ANIMALS", DEFAULT_ANIMALS)
-        self.position_list = _load_list_env("VALID_POSITIONS", DEFAULT_POSITIONS)
+        self.animal_list = load_list_env("VALID_ANIMALS", DEFAULT_ANIMALS)
+        self.position_list = load_list_env("VALID_POSITIONS", DEFAULT_POSITIONS)
 
     def validate_format(self, data: Dict[str, str]) -> None:
         """Validate dictionary shape and contents."""

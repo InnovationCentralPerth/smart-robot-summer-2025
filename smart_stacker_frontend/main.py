@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import argparse
 
-from smart_stacker.controllers.voice import HybridVoiceController
+from .smart_stacker.controllers.voice import HybridVoiceController
 
 
 def parse_args() -> argparse.Namespace:

@@ -10,8 +10,8 @@ from typing import Dict, List, Optional, Tuple
 
 import requests
 
-from smart_stacker.config import AnimalConfig, LLMConfig
-from smart_stacker.models.command import CommandMetrics
+from ..config import AnimalConfig, LLMConfig
+from ..models.command import CommandMetrics
 
 
 class AnimalStackerLLM:

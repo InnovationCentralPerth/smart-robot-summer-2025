@@ -8,7 +8,7 @@ from typing import Dict, Optional
 
 import paho.mqtt.client as mqtt
 
-from smart_stacker.config import MQTTConfig
+from ..config import MQTTConfig
 
 
 class MQTTEventClient:

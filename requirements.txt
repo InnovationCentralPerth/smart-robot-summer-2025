@@ -9,3 +9,6 @@ SpeechRecognition>=3.10.0
 
 # Audio Processing (for microphone support)
 PyAudio>=0.2.13
+
+# .env
+python-dotenv==1.2.1

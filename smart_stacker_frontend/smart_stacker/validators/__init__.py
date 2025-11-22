@@ -1,5 +1,5 @@
 """Validator exports."""
 
-from .response import LLMResponseValidator
+from .llm_response_validator import LLMResponseValidator
 
 __all__ = ["LLMResponseValidator"]
