@@ -47,7 +47,7 @@ def main() -> None:
 
             if running:
                 if result is None:
-                    print("No command generated. Try again.")
+                    print("[LOG] No command generated.")
                 elif result.is_safe:
                     print(f"✅ {result.message}: {result.command}")
                 else:

@@ -39,18 +39,36 @@ class SpeechInterface:
         return self.recognize(audio)
 
     def record_microphone(self, duration: int = 8) -> Optional[str]:
-        """Record audio for a fixed duration and transcribe it."""
+        """Record audio for a fixed duration, display a countdown, and transcribe it."""
 
         if not self.microphone_available:
+            print('❌ Microphone is not available.')
             return None
+        
+        print(f"🎙️ Starting recording in 1 second. Duration: {duration} seconds.")
 
         try:
             with suppress_audio_errors():
                 with sr.Microphone() as source:
+                    # Adjust for ambient noise
                     self.recognizer.adjust_for_ambient_noise(source, duration=1)
-                    audio = self.recognizer.record(source, duration=duration)
+
+                    # --- Countdown Loop ---
+                    # Print a clean line to separate logs/output and ensure \r starts cleanly
+                    print("⏳ Recording starts now...                                         ")
+                    
+                    for remaining in range(duration, 0, -1):
+                        # Print the remaining time, using '\r' to overwrite the previous line
+                        # Add trailing spaces to overwrite previous numbers/junk
+                        print(f"   Time remaining: {remaining} seconds   ", end='\r') 
+                        time.sleep(1)
+
+                    # Clear the countdown line and indicate recording is complete
+                    print("   Recording complete!                                            ") # Spaces to overwrite previous line content
+        
         except Exception:
-            return None
+                return None
+
         return self.recognize(audio)
 
     def continuous_listen(self, handler: Callable[[str], None]) -> None:

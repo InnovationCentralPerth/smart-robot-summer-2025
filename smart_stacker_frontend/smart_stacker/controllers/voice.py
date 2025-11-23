@@ -88,6 +88,7 @@ class HybridVoiceController:
         """Record audio from microphone and process it."""
 
         text = self.speech.record_microphone(duration)
+        print(text)
         if not text:
             return None
         return self._complete_pipeline(text)
