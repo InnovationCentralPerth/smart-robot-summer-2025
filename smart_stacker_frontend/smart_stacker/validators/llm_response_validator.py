@@ -8,12 +8,27 @@ from ..config import DEFAULT_ANIMALS, DEFAULT_POSITIONS
 
 
 def load_list_env(key: str, fallback: Iterable[str]) -> Set[str]:
-    """Load comma-separated environment variable with fallback values."""
+    """Load a list-like environment variable and normalize its items.
+
+    Accepts simple comma-separated strings (e.g. "E,L,F") **or** the
+    set-style notation seen in the project's default .env file
+    (e.g. {"E", "L", "F"}). Whitespace, surrounding quotes, and braces are
+    stripped so the returned set contains clean tokens like {"E", "L", "F"}.
+    """
 
     raw = os.getenv(key)
     if not raw:
         return {item.strip() for item in fallback}
-    return {item.strip() for item in raw.split(",") if item.strip()}
+
+    # Remove wrapping braces if present and split on commas
+    cleaned = raw.strip().strip("{}")
+    items = []
+    for item in cleaned.split(","):
+        normalized = item.strip().strip("'\"{} ")
+        if normalized:
+            items.append(normalized)
+
+    return set(items)
 
 
 class LLMResponseValidator:
