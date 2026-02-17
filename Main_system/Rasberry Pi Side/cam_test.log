@@ -1,0 +1,7 @@
+/home/icp/icp/Rasberry Pi Side/Vision/src/test_cam.py:6: DeprecationWarning: ColorCamera node is deprecated. Use Camera node instead.
+  camRgb = pipeline.create(dai.node.ColorCamera)
+Traceback (most recent call last):
+  File "/home/icp/icp/Rasberry Pi Side/Vision/src/test_cam.py", line 7, in <module>
+    xoutRgb = pipeline.create(dai.node.XLinkOut)
+                              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'depthai.node' has no attribute 'XLinkOut'

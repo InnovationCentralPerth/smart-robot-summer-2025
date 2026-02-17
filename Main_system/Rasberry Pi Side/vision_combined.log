@@ -1,0 +1,20 @@
+Loading custom TFLite model: /home/icp/icp/Rasberry Pi Side/Vision/models/custom_model.tflite
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Initializing OAK-D Pipeline...
+/home/icp/icp/Rasberry Pi Side/Vision/src/distance_detection_combined.py:62: DeprecationWarning: HIGH_ACCURACY is deprecated, will be removed in future releases and replaced with DEFAULT.
+  stereo.setDefaultProfilePreset(dai.node.StereoDepth.PresetMode.HIGH_ACCURACY)
+Starting Camera...
+[1944301041C8EF1200] [4.1] [1.552] [SpatialDetectionNetwork(1)] [warning] Network compiled for 5 shaves, maximum available 12, compiling for 6 shaves likely will yield in better performance
+COMBINED MODE RUNNING!
+Detecting standard objects (VPU) + Custom items (CPU).
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/icp/.local/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/icp/.local/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/icp/.local/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/icp/.local/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/icp/.local/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.

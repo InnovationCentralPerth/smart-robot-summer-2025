@@ -1,0 +1,13 @@
+Loading AI Model...
+FOUND TFLITE MODEL. Converting to BLOB for OAK-D Lite...
+Downloading /home/icp/.cache/blobconverter/custom_model_openvino_2022.1_5shave.blob...
+Parameter "name" is empty!
+Conversion failed: 400 Client Error: BAD REQUEST for url: https://blobconverter.luxonis.com/compile?version=2022.1&no_cache=False. Falling back to default.
+Initializing pipeline...
+/home/icp/icp/Rasberry Pi Side/Vision/src/distance_detection.py:63: DeprecationWarning: ColorCamera node is deprecated. Use Camera node instead.
+  camRgb = pipeline.create(dai.node.ColorCamera)
+Traceback (most recent call last):
+  File "/home/icp/icp/Rasberry Pi Side/Vision/src/distance_detection.py", line 64, in <module>
+    spatialDetectionNetwork = pipeline.create(dai.node.MobileNetSpatialDetectionNetwork)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'depthai.node' has no attribute 'MobileNetSpatialDetectionNetwork'. Did you mean: 'SpatialDetectionNetwork'?

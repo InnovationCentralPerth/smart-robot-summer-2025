@@ -1,0 +1,56 @@
+# ROS 2 REMOTE SLAM HANDOVER GUIDE (PC SIDE)
+
+This file contains the configuration and commands required for a Windows PC (running WSL2 Ubuntu) to act as the "Eyes" (3D Visualizer) for a Raspberry Pi SLAM "Brain".
+
+## 1. CONNECTION DETAILS
+- **Raspberry Pi IP:** 192.168.6.28
+- **ROS 2 Distro:** Jazzy
+- **Domain ID:** 0
+- **Pi Status:** Running SLAM via `/home/unknown/ros2_ws/start_slam2.sh` (Remote Mode)
+
+## 2. PC ENVIRONMENT SETUP (WSL2)
+Ensure you have the following installed in your WSL2 Ubuntu 24.04:
+- `sudo apt update && sudo apt install ros-jazzy-desktop ros-jazzy-rtabmap-ros -y`
+
+## 3. NETWORKING FIX (CRITICAL)
+Windows hides WSL2 behind a virtual NAT by default. You MUST enable "Mirrored" mode.
+1. In Windows (not WSL), open or create: `C:\Users\<YourUser>\.wslconfig`
+2. Add these lines:
+   ```ini
+   [wsl2]
+   networkingMode=mirrored
+   ```
+3. Run `wsl --shutdown` in PowerShell and restart Ubuntu.
+
+## 4. WINDOWS FIREWALL FIX
+Windows Firewall blocks the high-speed 3D data.
+1. Run PowerShell as Administrator.
+2. Run this command to allow the Raspberry Pi:
+   ```powershell
+   New-NetFirewallRule -DisplayName "Allow Pi SLAM" -Direction Inbound -Action Allow -Protocol UDP -RemoteAddress 192.168.6.28
+   ```
+
+## 5. PC-SIDE VERIFICATION
+Run these in your WSL2 terminal to confirm you can see the data:
+```bash
+export ROS_DOMAIN_ID=0
+export ROS_AUTOMATIC_DISCOVERY_RANGE=SUBNET
+export ROS_STATIC_PEERS="192.168.6.28"
+source /opt/ros/jazzy/setup.bash
+
+# Check for topics (should see /mapData, /odom)
+ros2 topic list
+```
+
+## 6. LAUNCH REMOTE VIEWER
+Once topics are visible, run the 3D window:
+```bash
+export ROS_DOMAIN_ID=0
+export ROS_AUTOMATIC_DISCOVERY_RANGE=SUBNET
+export ROS_STATIC_PEERS="192.168.6.28"
+ros2 run rtabmap_viz rtabmap_viz --ros-args \
+  -p subscribe_map_data:=true \
+  -p frame_id:=oak \
+  -r mapData:=/mapData \
+  -r odom:=/odom
+```

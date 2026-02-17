@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.DS_Store
+.vscode/
+.idea/
+
+# Ignore exported scans and models that might be generated
+exports/*
+!exports/.gitkeep
+models/*.blob
+!models/.gitkeep
+
+# Ignore logs if any generated locally
+*.log

@@ -1,0 +1,45 @@
+# braccio/config/rsl_rl_cfg.yaml
+hydra:
+  run:
+    dir: .
+
+seed: 42
+
+runner:
+  policy:
+    class_name: ActorCritic
+    init_noise_std: 0.5
+    actor_hidden_dims: [256, 128, 64]
+    critic_hidden_dims: [256, 128, 64]
+    activation: elu
+
+  algorithm:
+    class_name: PPO
+    value_loss_coef: 1.0
+    use_clipped_value_loss: True
+    clip_param: 0.2
+    entropy_coef: 0.0  # Higher entropy helps explore to find the target initially
+    num_learning_epochs: 5
+    num_mini_batches: 4
+    learning_rate: 3.0e-4 # Standard learning rate
+    schedule: adaptive
+    gamma: 0.96
+    lam: 0.95
+    desired_kl: 0.01
+    max_grad_norm: 0.5
+
+  max_iterations: 1500   # How long to train (approx 20-30 mins on RTX 5080)
+  save_interval: 50      # Save a checkpoint every 50 iterations
+  experiment_name: "braccio_reach"
+  run_name: ""
+  resume: False
+  load_run: -1
+  checkpoint: -1
+  
+  # Maps the "policy" group from your Env Config to the RL Agent
+  obs_groups:
+    policy: ["policy"]
+    value: ["policy"]
+
+  # RTX 5080 Specific: You can push num_envs high
+  num_steps_per_env: 24

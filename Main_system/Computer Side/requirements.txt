@@ -1,0 +1,16 @@
+# MQTT Communication
+paho-mqtt>=2.0.0
+
+# HTTP Requests for LLM API
+requests>=2.31.0
+openai>=1.0.0
+
+# Speech Recognition
+SpeechRecognition>=3.10.0
+
+# Audio Processing (for microphone support)
+PyAudio>=0.2.13
+soundfile>=0.12.1
+
+# .env
+python-dotenv==1.2.1

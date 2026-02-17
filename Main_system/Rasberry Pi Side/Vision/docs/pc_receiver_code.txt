@@ -1,0 +1,44 @@
+INSTRUCTIONS:
+1. Copy the code below.
+2. Create a new file on your Windows PC named "pc_listener.py".
+3. Paste the code into that file.
+4. Run it using Command Prompt or PowerShell: python pc_listener.py
+
+--- CODE STARTS BELOW ---
+
+import socket
+import json
+
+# Listen on all network interfaces so we catch the Pi's packets
+UDP_IP = "0.0.0.0"
+UDP_PORT = 5005
+
+# Create the socket
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock.bind((UDP_IP, UDP_PORT))
+
+print(f"Listening for OAK-D Lite detection data on port {UDP_PORT}...")
+print("Press Ctrl+C to stop.")
+
+while True:
+    try:
+        # buffer size is 1024 bytes
+        data, addr = sock.recvfrom(1024)
+        
+        # Decode the JSON data sent by the Pi
+        message = data.decode('utf-8')
+        info = json.loads(message)
+        
+        # Print formatted output
+        obj_name = info['object'].ljust(15)
+        dist = str(info['distance_mm']).rjust(5)
+        conf = str(info['confidence']).rjust(5)
+        x_pos = str(info.get('x_pos', 'N/A')).rjust(5)
+        
+        print(f"OBJECT: {obj_name} | DIST: {dist} mm | CONF: {conf}% | X: {x_pos}")
+        
+    except KeyboardInterrupt:
+        break
+    except Exception as e:
+        # Ignore bad packets
+        pass

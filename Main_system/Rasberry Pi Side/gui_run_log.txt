@@ -1,0 +1,250 @@
+[2026-02-16 20:21:07,899] :: WARNING :: amqtt.contexts :: sys_interval is deprecated, use 'plugins' to define configuration
+[2026-02-16 20:21:07,900] :: WARNING :: amqtt.contexts :: 'auth' and 'topic-check' are deprecated, use 'plugins' to define configuration
+/home/icp/icp/Rasberry Pi Side/mqtt_broker.py:23: DeprecationWarning: Loading plugins from EntryPoints is deprecated and will be removed in a future version. Use `plugins` section of config instead.
+  broker = Broker(config)
+[2026-02-16 20:21:08,021] :: WARNING :: amqtt.broker.plugins.auth_file :: Configuration parameter 'password-file' not found
+[2026-02-16 20:21:08,081] :: INFO :: transitions.core :: Executed callback '<bound method Broker._log_state_change of <amqtt.broker.Broker object at 0xffff9f1a1010>>'
+[2026-02-16 20:21:08,081] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:08,081] :: INFO :: transitions.core :: Finished processing state starting enter callbacks.
+[2026-02-16 20:21:08,082] :: INFO :: amqtt.broker :: Listener 'default' bind to 0.0.0.0:1883 (max_connections=0)
+[2026-02-16 20:21:08,083] :: INFO :: transitions.core :: Finished processing state starting exit callbacks.
+[2026-02-16 20:21:08,084] :: INFO :: transitions.core :: Finished processing state started enter callbacks.
+MQTT Broker started on port 1883
+[2026-02-16 20:21:08,086] :: INFO :: amqtt.broker :: Starting session expiration monitor.
+[2026-02-16 20:21:09,843] :: INFO :: amqtt.broker :: Listener 'default': 1/∞ connections acquired
+[2026-02-16 20:21:09,844] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:36911 on listener 'default'
+[2026-02-16 20:21:09,850] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:09,850] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/iIeS9Jn6azAgkld5, state=connected)>'
+[2026-02-16 20:21:09,850] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:09,854] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:10,281] :: INFO :: amqtt.broker :: Listener 'default': 2/∞ connections acquired
+[2026-02-16 20:21:10,282] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:43279 on listener 'default'
+[2026-02-16 20:21:10,287] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:10,288] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/dw5yOFfM5AzD49jP, state=connected)>'
+[2026-02-16 20:21:10,288] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:10,289] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:10,669] :: INFO :: amqtt.broker :: Listener 'default': 3/∞ connections acquired
+[2026-02-16 20:21:10,670] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:39107 on listener 'default'
+[2026-02-16 20:21:10,677] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:10,678] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/5nW1swIN7qJqYbEk, state=connected)>'
+[2026-02-16 20:21:10,679] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:10,680] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:10,789] :: INFO :: amqtt.broker :: Listener 'default': 4/∞ connections acquired
+[2026-02-16 20:21:10,790] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:53325 on listener 'default'
+[2026-02-16 20:21:10,794] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:10,795] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/0s5hUHC0n7m7wWup, state=connected)>'
+[2026-02-16 20:21:10,795] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:10,796] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:11,176] :: INFO :: amqtt.broker :: Listener 'default': 5/∞ connections acquired
+[2026-02-16 20:21:11,177] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:51413 on listener 'default'
+[2026-02-16 20:21:11,188] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:11,188] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/lz8A0JZHyAzFG0hc, state=connected)>'
+[2026-02-16 20:21:11,188] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:11,189] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:11,277] :: INFO :: amqtt.broker :: Listener 'default': 6/∞ connections acquired
+[2026-02-16 20:21:11,277] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:46309 on listener 'default'
+[2026-02-16 20:21:11,282] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:11,282] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/McJVGYilkBY3dCsY, state=connected)>'
+[2026-02-16 20:21:11,283] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:11,284] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:11,755] :: INFO :: amqtt.broker :: Listener 'default': 7/∞ connections acquired
+[2026-02-16 20:21:11,756] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:50149 on listener 'default'
+[2026-02-16 20:21:11,760] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:11,760] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/tvpY7znPg6MI6JYt, state=connected)>'
+[2026-02-16 20:21:11,761] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:11,761] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+xterm: fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":99"
+xterm: fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":99"
+xterm: fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":99"
+xterm: fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":99"
+xterm: fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":99"
+[2026-02-16 20:21:21,843] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:21,844] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/0s5hUHC0n7m7wWup, state=disconnected)>'
+[2026-02-16 20:21:21,844] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:21,844] :: INFO :: amqtt.broker :: Listener 'default': 6/∞ connections acquired
+[2026-02-16 20:21:21,851] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:21,851] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/dw5yOFfM5AzD49jP, state=disconnected)>'
+[2026-02-16 20:21:21,851] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:21,851] :: INFO :: amqtt.broker :: Listener 'default': 5/∞ connections acquired
+[2026-02-16 20:21:21,851] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:21,852] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:21,852] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:21,852] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/McJVGYilkBY3dCsY, state=disconnected)>'
+[2026-02-16 20:21:21,855] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:21,857] :: INFO :: amqtt.broker :: Listener 'default': 4/∞ connections acquired
+[2026-02-16 20:21:21,858] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:21,859] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/5nW1swIN7qJqYbEk, state=disconnected)>'
+[2026-02-16 20:21:21,859] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:21,860] :: INFO :: amqtt.broker :: Listener 'default': 3/∞ connections acquired
+[2026-02-16 20:21:21,861] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:21,862] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:21,863] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:21,864] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/lz8A0JZHyAzFG0hc, state=disconnected)>'
+[2026-02-16 20:21:21,864] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:21,864] :: INFO :: amqtt.broker :: Listener 'default': 2/∞ connections acquired
+[2026-02-16 20:21:21,865] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:21,865] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:21,865] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/iIeS9Jn6azAgkld5, state=disconnected)>'
+[2026-02-16 20:21:21,865] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:21,866] :: INFO :: amqtt.broker :: Listener 'default': 1/∞ connections acquired
+[2026-02-16 20:21:21,866] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:21,866] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:21,867] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/tvpY7znPg6MI6JYt, state=disconnected)>'
+[2026-02-16 20:21:21,867] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:21,867] :: INFO :: amqtt.broker :: Listener 'default': 0/∞ connections acquired
+[2026-02-16 20:21:21,867] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:45,910] :: INFO :: amqtt.broker :: Listener 'default': 1/∞ connections acquired
+[2026-02-16 20:21:45,914] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:35009 on listener 'default'
+[2026-02-16 20:21:45,924] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:45,926] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/vZ7aR6gK6pB9357P, state=connected)>'
+[2026-02-16 20:21:45,929] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:45,932] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:46,185] :: INFO :: amqtt.broker :: Listener 'default': 2/∞ connections acquired
+[2026-02-16 20:21:46,187] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:56121 on listener 'default'
+[2026-02-16 20:21:46,189] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:46,190] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/JC2Gg4fuLGchWnrR, state=connected)>'
+[2026-02-16 20:21:46,190] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:46,191] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:46,561] :: INFO :: amqtt.broker :: Listener 'default': 3/∞ connections acquired
+[2026-02-16 20:21:46,561] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:41883 on listener 'default'
+[2026-02-16 20:21:46,564] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:46,564] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/uKMPoavXpXoTFPEK, state=connected)>'
+[2026-02-16 20:21:46,564] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:46,564] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:46,719] :: INFO :: amqtt.broker :: Listener 'default': 4/∞ connections acquired
+[2026-02-16 20:21:46,721] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:41897 on listener 'default'
+[2026-02-16 20:21:46,724] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:46,725] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/utdtpSbJgRFdLgSp, state=connected)>'
+[2026-02-16 20:21:46,726] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:46,728] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:47,118] :: INFO :: amqtt.broker :: Listener 'default': 5/∞ connections acquired
+[2026-02-16 20:21:47,122] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:58341 on listener 'default'
+[2026-02-16 20:21:47,126] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:47,127] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/uyDaAFqLR4Tv5Yr9, state=connected)>'
+[2026-02-16 20:21:47,127] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:47,128] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:47,282] :: INFO :: amqtt.broker :: Listener 'default': 6/∞ connections acquired
+[2026-02-16 20:21:47,283] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:35401 on listener 'default'
+[2026-02-16 20:21:47,286] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:47,287] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/ZFqbZzxFL5QHqFso, state=connected)>'
+[2026-02-16 20:21:47,287] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:47,290] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:47,803] :: INFO :: amqtt.broker :: Listener 'default': 7/∞ connections acquired
+[2026-02-16 20:21:47,804] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:53631 on listener 'default'
+[2026-02-16 20:21:47,814] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:47,815] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/er77ZxdOl7tzhA71, state=connected)>'
+[2026-02-16 20:21:47,816] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:21:47,817] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:21:57,926] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:57,926] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/ZFqbZzxFL5QHqFso, state=disconnected)>'
+[2026-02-16 20:21:57,926] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:57,927] :: INFO :: amqtt.broker :: Listener 'default': 6/∞ connections acquired
+[2026-02-16 20:21:57,927] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:57,928] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:57,928] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/JC2Gg4fuLGchWnrR, state=disconnected)>'
+[2026-02-16 20:21:57,928] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:57,928] :: INFO :: amqtt.broker :: Listener 'default': 5/∞ connections acquired
+[2026-02-16 20:21:57,929] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:57,931] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:57,932] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/uyDaAFqLR4Tv5Yr9, state=disconnected)>'
+[2026-02-16 20:21:57,932] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:57,932] :: INFO :: amqtt.broker :: Listener 'default': 4/∞ connections acquired
+[2026-02-16 20:21:57,932] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:57,933] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:57,933] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/utdtpSbJgRFdLgSp, state=disconnected)>'
+[2026-02-16 20:21:57,933] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:57,933] :: INFO :: amqtt.broker :: Listener 'default': 3/∞ connections acquired
+[2026-02-16 20:21:57,934] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:57,941] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:57,942] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/uKMPoavXpXoTFPEK, state=disconnected)>'
+[2026-02-16 20:21:57,942] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:57,942] :: INFO :: amqtt.broker :: Listener 'default': 2/∞ connections acquired
+[2026-02-16 20:21:57,942] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:57,942] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/vZ7aR6gK6pB9357P, state=disconnected)>'
+[2026-02-16 20:21:57,945] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:57,945] :: INFO :: amqtt.broker :: Listener 'default': 1/∞ connections acquired
+[2026-02-16 20:21:57,945] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:57,946] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:21:57,965] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:21:57,966] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/er77ZxdOl7tzhA71, state=disconnected)>'
+[2026-02-16 20:21:57,966] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:21:57,967] :: INFO :: amqtt.broker :: Listener 'default': 0/∞ connections acquired
+[2026-02-16 20:21:57,967] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:23:09,010] :: INFO :: amqtt.broker :: Listener 'default': 1/∞ connections acquired
+[2026-02-16 20:23:09,010] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:46971 on listener 'default'
+[2026-02-16 20:23:09,012] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:23:09,012] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/ZSDa5LKt54cV6HzX, state=connected)>'
+[2026-02-16 20:23:09,012] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:23:09,013] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:23:09,201] :: INFO :: amqtt.broker :: Listener 'default': 2/∞ connections acquired
+[2026-02-16 20:23:09,201] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:53867 on listener 'default'
+[2026-02-16 20:23:09,207] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:23:09,208] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/y9whdKXMSohPh0E3, state=connected)>'
+[2026-02-16 20:23:09,208] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:23:09,209] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:23:09,489] :: INFO :: amqtt.broker :: Listener 'default': 3/∞ connections acquired
+[2026-02-16 20:23:09,489] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:52561 on listener 'default'
+[2026-02-16 20:23:09,490] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:23:09,490] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/RZHSsVrKTiG9t8C2, state=connected)>'
+[2026-02-16 20:23:09,491] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:23:09,491] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:23:09,815] :: INFO :: amqtt.broker :: Listener 'default': 4/∞ connections acquired
+[2026-02-16 20:23:09,820] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:53943 on listener 'default'
+[2026-02-16 20:23:09,832] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:23:09,833] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/lxGVfU9gNcrVFz13, state=connected)>'
+[2026-02-16 20:23:09,836] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:23:09,838] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:23:10,156] :: INFO :: amqtt.broker :: Listener 'default': 5/∞ connections acquired
+[2026-02-16 20:23:10,156] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:50353 on listener 'default'
+[2026-02-16 20:23:10,170] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:23:10,171] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/5tjhZToRIOpOc8rg, state=connected)>'
+[2026-02-16 20:23:10,171] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:23:10,176] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:23:10,343] :: INFO :: amqtt.broker :: Listener 'default': 6/∞ connections acquired
+[2026-02-16 20:23:10,344] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:55067 on listener 'default'
+[2026-02-16 20:23:10,354] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:23:10,354] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/Sc0fPSPW3z22L22j, state=connected)>'
+[2026-02-16 20:23:10,354] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:23:10,355] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:23:10,930] :: INFO :: amqtt.broker :: Listener 'default': 7/∞ connections acquired
+[2026-02-16 20:23:10,930] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:55725 on listener 'default'
+[2026-02-16 20:23:10,933] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:23:10,934] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/OFCT1ibm1imi8PYy, state=connected)>'
+[2026-02-16 20:23:10,934] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:23:10,934] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:26:05,893] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:26:05,893] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/ZSDa5LKt54cV6HzX, state=disconnected)>'
+[2026-02-16 20:26:05,893] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:26:05,893] :: INFO :: amqtt.broker :: Listener 'default': 6/∞ connections acquired
+[2026-02-16 20:26:05,893] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:26:08,774] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:26:08,774] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/OFCT1ibm1imi8PYy, state=disconnected)>'
+[2026-02-16 20:26:08,774] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:26:08,774] :: INFO :: amqtt.broker :: Listener 'default': 5/∞ connections acquired
+[2026-02-16 20:26:08,774] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:26:10,301] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:26:10,301] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/5tjhZToRIOpOc8rg, state=disconnected)>'
+[2026-02-16 20:26:10,301] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:26:10,301] :: INFO :: amqtt.broker :: Listener 'default': 4/∞ connections acquired
+[2026-02-16 20:26:10,301] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:26:10,302] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:26:10,303] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/lxGVfU9gNcrVFz13, state=disconnected)>'
+[2026-02-16 20:26:10,303] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:26:10,303] :: INFO :: amqtt.broker :: Listener 'default': 3/∞ connections acquired
+[2026-02-16 20:26:10,303] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:26:11,228] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:26:11,228] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/Sc0fPSPW3z22L22j, state=disconnected)>'
+[2026-02-16 20:26:11,228] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:26:11,229] :: INFO :: amqtt.broker :: Listener 'default': 2/∞ connections acquired
+[2026-02-16 20:26:11,229] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:26:14,094] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:26:14,094] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/RZHSsVrKTiG9t8C2, state=disconnected)>'
+[2026-02-16 20:26:14,094] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:26:14,094] :: INFO :: amqtt.broker :: Listener 'default': 1/∞ connections acquired
+[2026-02-16 20:26:14,095] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+[2026-02-16 20:26:14,095] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:26:14,096] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/y9whdKXMSohPh0E3, state=disconnected)>'
+[2026-02-16 20:26:14,096] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:26:14,096] :: INFO :: amqtt.broker :: Listener 'default': 0/∞ connections acquired
+[2026-02-16 20:26:14,096] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
+./start_game.sh: line 16: 51425 Killed                  python3 run.py

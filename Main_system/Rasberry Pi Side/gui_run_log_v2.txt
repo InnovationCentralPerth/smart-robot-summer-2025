@@ -1,0 +1,67 @@
+[2026-02-16 20:21:43,853] :: WARNING :: amqtt.contexts :: sys_interval is deprecated, use 'plugins' to define configuration
+[2026-02-16 20:21:43,855] :: WARNING :: amqtt.contexts :: 'auth' and 'topic-check' are deprecated, use 'plugins' to define configuration
+/home/icp/icp/Rasberry Pi Side/mqtt_broker.py:23: DeprecationWarning: Loading plugins from EntryPoints is deprecated and will be removed in a future version. Use `plugins` section of config instead.
+  broker = Broker(config)
+[2026-02-16 20:21:43,989] :: WARNING :: amqtt.broker.plugins.auth_file :: Configuration parameter 'password-file' not found
+[2026-02-16 20:21:44,042] :: INFO :: transitions.core :: Executed callback '<bound method Broker._log_state_change of <amqtt.broker.Broker object at 0xffff9ce878f0>>'
+[2026-02-16 20:21:44,043] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:21:44,043] :: INFO :: transitions.core :: Finished processing state starting enter callbacks.
+[2026-02-16 20:21:44,044] :: ERROR :: amqtt.broker :: Broker startup failed
+Traceback (most recent call last):
+  File "/home/icp/.local/lib/python3.12/site-packages/amqtt/broker.py", line 258, in start
+    await self._start_listeners()
+  File "/home/icp/.local/lib/python3.12/site-packages/amqtt/broker.py", line 294, in _start_listeners
+    instance = await self._create_server_instance(listener_name, listener.type, address, port, ssl_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/icp/.local/lib/python3.12/site-packages/amqtt/broker.py", line 330, in _create_server_instance
+    return await asyncio.start_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/streams.py", line 84, in start_server
+    return await loop.create_server(factory, host, port, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 1572, in create_server
+    raise OSError(err.errno, msg) from None
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 1883): address already in use
+[2026-02-16 20:21:44,058] :: INFO :: transitions.core :: Finished processing state starting exit callbacks.
+[2026-02-16 20:21:44,059] :: INFO :: transitions.core :: Finished processing state not_started enter callbacks.
+Traceback (most recent call last):
+  File "/home/icp/.local/lib/python3.12/site-packages/amqtt/broker.py", line 258, in start
+    await self._start_listeners()
+  File "/home/icp/.local/lib/python3.12/site-packages/amqtt/broker.py", line 294, in _start_listeners
+    instance = await self._create_server_instance(listener_name, listener.type, address, port, ssl_context)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/icp/.local/lib/python3.12/site-packages/amqtt/broker.py", line 330, in _create_server_instance
+    return await asyncio.start_server(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/streams.py", line 84, in start_server
+    return await loop.create_server(factory, host, port, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 1572, in create_server
+    raise OSError(err.errno, msg) from None
+OSError: [Errno 98] error while attempting to bind on address ('0.0.0.0', 1883): address already in use
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/icp/icp/Rasberry Pi Side/mqtt_broker.py", line 33, in <module>
+    asyncio.run(start_broker())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/icp/icp/Rasberry Pi Side/mqtt_broker.py", line 24, in start_broker
+    await broker.start()
+  File "/home/icp/.local/lib/python3.12/site-packages/amqtt/broker.py", line 268, in start
+    raise BrokerError(msg) from e
+amqtt.errors.BrokerError: Broker instance can't be started: [Errno 98] error while attempting to bind on address ('0.0.0.0', 1883): address already in use
+xterm: xterm: fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":99"
+fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":99"
+xterm: fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":99"
+xterm: fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":99"
+xterm: fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":99"
+./start_game.sh: line 16: 51496 Killed                  python3 run.py

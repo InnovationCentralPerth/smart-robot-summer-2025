@@ -1,0 +1,77 @@
+[2026-02-16 20:01:05,538] :: WARNING :: amqtt.contexts :: sys_interval is deprecated, use 'plugins' to define configuration
+[2026-02-16 20:01:05,538] :: WARNING :: amqtt.contexts :: 'auth' and 'topic-check' are deprecated, use 'plugins' to define configuration
+/home/icp/icp/Rasberry Pi Side/mqtt_broker.py:23: DeprecationWarning: Loading plugins from EntryPoints is deprecated and will be removed in a future version. Use `plugins` section of config instead.
+  broker = Broker(config)
+[2026-02-16 20:01:05,616] :: WARNING :: amqtt.broker.plugins.auth_file :: Configuration parameter 'password-file' not found
+[2026-02-16 20:01:05,648] :: INFO :: transitions.core :: Executed callback '<bound method Broker._log_state_change of <amqtt.broker.Broker object at 0xffff8253f4a0>>'
+[2026-02-16 20:01:05,649] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:01:05,649] :: INFO :: transitions.core :: Finished processing state starting enter callbacks.
+[2026-02-16 20:01:05,650] :: INFO :: amqtt.broker :: Listener 'default' bind to 0.0.0.0:1883 (max_connections=0)
+[2026-02-16 20:01:05,650] :: INFO :: transitions.core :: Finished processing state starting exit callbacks.
+[2026-02-16 20:01:05,650] :: INFO :: transitions.core :: Finished processing state started enter callbacks.
+MQTT Broker started on port 1883
+[2026-02-16 20:01:05,651] :: INFO :: amqtt.broker :: Starting session expiration monitor.
+[WARNING] Tkinter not found. MQTT GUI will not run.
+Headless mode: MQTT GUI requires tkinter.
+[2026-02-16 20:01:07,887] :: INFO :: amqtt.broker :: Listener 'default': 1/∞ connections acquired
+[2026-02-16 20:01:07,887] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:58799 on listener 'default'
+[2026-02-16 20:01:07,888] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:01:07,888] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/EtNhnw7n1rRPcAvH, state=connected)>'
+[2026-02-16 20:01:07,888] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:01:07,889] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:01:08,069] :: INFO :: amqtt.broker :: Listener 'default': 2/∞ connections acquired
+[2026-02-16 20:01:08,069] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:40171 on listener 'default'
+[2026-02-16 20:01:08,070] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:01:08,071] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/m9u3lukvZIo9bR3m, state=connected)>'
+[2026-02-16 20:01:08,071] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:01:08,071] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:01:08,410] :: INFO :: amqtt.broker :: Listener 'default': 3/∞ connections acquired
+[2026-02-16 20:01:08,413] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:52449 on listener 'default'
+[2026-02-16 20:01:08,415] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:01:08,415] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/CoV5OzL2K1WlVCWC, state=connected)>'
+[2026-02-16 20:01:08,415] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:01:08,419] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:01:08,573] :: INFO :: amqtt.broker :: Listener 'default': 4/∞ connections acquired
+[2026-02-16 20:01:08,573] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:37157 on listener 'default'
+LLM Sender (terminal version)
+========This shows the middleground messaging can input========
+
+Non-interactive mode. Listening on stdin...
+[2026-02-16 20:01:08,574] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:01:08,575] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/Ow8YG2ec5bJxgvrI, state=connected)>'
+[2026-02-16 20:01:08,575] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:01:08,575] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[2026-02-16 20:01:08,901] :: INFO :: amqtt.broker :: Listener 'default': 5/∞ connections acquired
+[2026-02-16 20:01:08,901] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:50687 on listener 'default'
+LLM Sender (terminal version)
+========This shows the middleground messaging can input========
+
+Non-interactive mode. Listening on stdin...
+[2026-02-16 20:01:08,902] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:01:08,902] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/DFqh8efAdmjbrgij, state=connected)>'
+[2026-02-16 20:01:08,902] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:01:08,902] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[WARNING] Tkinter not found. Running in Headless Mode.
+[2026-02-16 20:01:09,402] :: INFO :: amqtt.broker :: Listener 'default': 6/∞ connections acquired
+[2026-02-16 20:01:09,402] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:57637 on listener 'default'
+[HEADLESS] Main loop started. Press Ctrl+C to exit.
+[2026-02-16 20:01:09,403] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:01:09,403] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/2p2RF2t9C3CcVZn6, state=connected)>'
+[2026-02-16 20:01:09,403] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:01:09,403] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[MQTT] Connected with result code Success
+[2026-02-16 20:02:31,465] :: INFO :: amqtt.broker :: Listener 'default': 7/∞ connections acquired
+[2026-02-16 20:02:31,465] :: INFO :: amqtt.broker :: Connection from 127.0.0.1:57623 on listener 'default'
+[2026-02-16 20:02:31,466] :: INFO :: transitions.core :: Finished processing state new exit callbacks.
+[2026-02-16 20:02:31,467] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_connected of Session(clientId=amqtt/1GGzfmBiCUg5YyQk, state=connected)>'
+[2026-02-16 20:02:31,467] :: INFO :: transitions.core :: Finished processing state connected enter callbacks.
+[2026-02-16 20:02:31,467] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_connected' EVENT FIRED ###
+[MQTT] Received on animal_game/direct: A,B
+[Serial] Error opening serial port: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+[Serial] Not connected, cannot send command
+[DEBUG] Direct command sent: A,B
+[2026-02-16 20:02:32,467] :: INFO :: transitions.core :: Finished processing state connected exit callbacks.
+[2026-02-16 20:02:32,467] :: INFO :: transitions.core :: Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=amqtt/1GGzfmBiCUg5YyQk, state=disconnected)>'
+[2026-02-16 20:02:32,468] :: INFO :: transitions.core :: Finished processing state disconnected enter callbacks.
+[2026-02-16 20:02:32,468] :: INFO :: amqtt.broker :: Listener 'default': 6/∞ connections acquired
+[2026-02-16 20:02:32,468] :: INFO :: amqtt.broker.plugins.event_logger_plugin :: ### 'on_broker_client_disconnected' EVENT FIRED ###
